@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gráfico de Barras con Canvas</title>
+</head>
+<body>
+
+    <h1>Gráfico de Barras</h1>
+
+    <canvas id="grafico" width="400" height="300"></canvas>
+
+    <script>
+        
+        var canvas = document.getElementById('grafico');
+        var ctx = canvas.getContext('2d');
+        var data = [50, 80, 120, 150, 200];
+        
+        var barWidth = 50;
+        var barSpacing = 20;
+        var barColor = '#ea3a53';
+       
+        for (var i = 0; i < data.length; i++) {
+            var barHeight = data[i];
+            var x = (barWidth + barSpacing) * i;
+            var y = canvas.height - barHeight;
+            ctx.fillStyle = barColor;
+            ctx.fillRect(x, y, barWidth, barHeight);
+        }
+    </script>
+
+</body>
+</html>
