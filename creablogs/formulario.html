@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es" dir="ltr">
+    <head>
+        <meta charset="UTF8" />
+        <title>Creador de blogs</title>
+        <link rel="stylesheet" type="text/css" href="estilo.css" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+    </head>
+    <body>
+        <div id="dividir" class="texto">
+            <h1>Creador de blogs</h1>
+            <h2>Completa los datos</h2>
+            <label for="nombre">Dime tu nombre:</label><br>
+            <input
+                type="text"
+                id="nombre"
+                placeholder="Escribir nombre" /><br />
+            <label for="imagen">Adjunta alguna imagen:</label><br>
+                       
+            <input
+                type="text"
+                id="imagen"
+                placeholder="Escribe la url de imagen" /><br />
+            <label for="titulo">Introduce un título para tu blog:</label><br>
+            <input
+                type="text"
+                id="titulo"
+                placeholder="Escribir Título" /><br />
+            <label for="subtitulo">Introduce un Subtítulo para tu blog:</label
+            ><br>
+         
+
+            <input
+                type="text"
+                id="subtitulo"
+                placeholder="Escribir Subtitulo" /><br />
+             <label for="video">¿Quieres incluir algún video? 
+    <span id="nota">(embed)<span class="material-symbols-outlined">help_center</span> <div class="tooltip" id="tooltip">
+            <img id="questionimg" src=".\img\question.png" alt="Tooltip Image">
+        </div>
+        
+    </span>
+</label><br>
+
+            <input
+                type="text"
+                id="video"
+                placeholder="Escribe la url del video" /><br />
+            <label for="contenido"
+                >Pon aquí el texto que deseas para tu blog:</label
+            ><br />
+            <textarea
+                id="contenido"
+                rows="4"
+                cols="50"
+                placeholder="Escribir contenido"></textarea
+            ><br />
+            <div class="checkbox"></div>
+        
+        <div class="checker">
+            <input
+                type="checkbox"
+                id="avisolegal"
+                name="avisolegal"
+                autocomplete="off" />
+            <label for="avisolegal"><a href="avisolegal.html">Acepto política de Privacidad</a></label
+            ><br />
+
+        </div>
+                          <button id="enviar">Enviar</button>
+        <button id="reset">Reset</button>
+</div>
+        <br />
+
+     
+        
+
+        <div id="textos">
+            <h1 id="texto1"></h1>
+            <img id="texto2" />
+            <p id="texto3"></p>
+            <h2 id="texto6"></h2>
+            <p id="texto4"></p>
+          
+            <div id="video-yt">
+                
+            </div>
+              <p id="texto5"></p>
+        </div>
+        <script
+            src="https://code.jquery.com/jquery-3.6.0.js"
+            integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+            crossorigin="anonymous"></script>
+
+        <script charset="utf-8" src="myjs.js" type="text/javascript"></script>
+    </body>
+</html>

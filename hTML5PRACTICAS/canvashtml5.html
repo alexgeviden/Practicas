@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gráfico de Barras con Canvas</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
     <h1>Gráfico de Barras</h1>
 
-    <canvas id="grafico" width="400" height="300"></canvas>
+    <canvas id="grafico" width="400" height="300"></canvas><br>
+    <div id="divisor"></div>
+    <video src="archivos/josefa2.mp4" width="100px" style="width: 400px;"></video>
+            <button id="playButton">Reproducir</button>
+
 
     <script>
         
@@ -28,6 +33,19 @@
             ctx.fillStyle = barColor;
             ctx.fillRect(x, y, barWidth, barHeight);
         }
+        
+        var video = document.getElementById('video');
+        var playButton = document.getElementById('playButton');
+
+        playButton.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playButton.textContent = 'Pausar';
+            } else {
+                video.pause();
+                playButton.textContent = 'Reproducir';
+            }
+        });
     </script>
 
 </body>
