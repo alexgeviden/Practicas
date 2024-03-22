@@ -3,8 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gráfico de Barras con Canvas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Gráfico de Barras y Reproductor de Video</title>
 </head>
 <body>
 
@@ -13,7 +12,7 @@
     <canvas id="grafico" width="400" height="300"></canvas><br>
     <div id="divisor"></div>
     <video src="archivos/josefa2.mp4" width="100px" style="width: 400px;"></video>
-            <button id="playButton">Reproducir</button>
+    <button id="playButton">Reproducir</button>
 
 
     <script>
@@ -34,7 +33,7 @@
             ctx.fillRect(x, y, barWidth, barHeight);
         }
         
-        var video = document.getElementById('video');
+        var video = document.querySelector('video'); // Cambiado de getElementById('video') a querySelector('video')
         var playButton = document.getElementById('playButton');
 
         playButton.addEventListener('click', function() {

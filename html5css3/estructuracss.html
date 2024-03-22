@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ejemplo de Flexbox y Grid</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+    .container {
+        display: flex; /* Utilizando Flexbox */
+        flex-wrap: wrap;
+        background-color: #f1c40f;
+        justify-content: flex-end;
+        width: 100%;
+        padding: 10px;
+    }
+    .item {
+        width: 200px;
+        height: 200px;
+        background-color: #3498db;
+        color: #fff;
+        margin: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 24px;
+    }
+    .grid-container {
+        display: grid; /* Utilizando CSS Grid */
+        grid-template-columns: repeat(2, 5fr);
+        grid-gap: 10px;
+        margin-top: 20px;
+        height:  30vh;
+        background-color: #27ae60;
+        padding: 10px;
+    }
+    .grid-item {
+        background-color: #2ecc71;
+        color: #fff;
+        padding: 20px;
+        font-size: 24px;
+        text-align: center;
+        width: 80px;
+        transition: 0.5s;
+    }
+    .grid-item:hover {
+        background-color: #3498db;
+        transform: scale(1.1);
+        transition: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        transform: translateX(50px);
+        
+    }
+    #manolo{
+        display: none;
+    }
+</style>
+<script>
+    function almendra(){
+        var x = document.getElementById("manolo");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+  } else {
+    x.style.display = "none";
+  }
+    };
+   
+</script>
+</head>
+<body>
+<div class="container">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+    <div class="item">4</div>
+    <div class="item">5</div>
+    <div class="item">6</div>
+</div>
+<div class="grid-container">
+    <div class="grid-item" onclick="almendra()">A<span id="manolo"><p>Manolo es un crack</p></span></div>
+    <div class="grid-item" onclick="almendra()">B</div>
+    <div class="grid-item">C</div>
+    <div class="grid-item">D</div>
+    <div class="grid-item">E</div>
+    <div class="grid-item">F</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    background-color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    background-color: #555;
+}
+#menu{
+    display: grid;
+    grid-template-columns: repeat(3, 5fr);
+    grid-gap: 10px;
+}
+.content {
+    padding: 20px;
+}
+
+section {
+    margin-bottom: 20px;
+}
+#acerca{
+    display: none;
+}
+#circle , #rectangulo{
+    transition: 0.5s;
+}
+#rectangulo:hover{
+    fill: aquamarine;
+    
+}
+svg{
+    animation: desplazar 5s infinite;
+}
+@keyframes desplazar{
+    0%   {transform: translateX(0) ; }
+    50%  { transform: translateX(200px);}
+    100% { transform: translateX(0);}
+}
+  .rotacion {
+    animation: movimiento 8s  infinite;
+  }
+  
+  @keyframes movimiento {
+    0% {
+      transform: translateY(20px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+    100% {
+      transform: translateY(20px);
+    }
+  }
+#circle:hover{
+    fill: blanchedalmond;
+}
+#servicios{
+    display: none;
+}
+#contacto{
+    display: none;
+}

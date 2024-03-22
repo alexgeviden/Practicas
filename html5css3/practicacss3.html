@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú de Navegación</title>
+    <link rel="stylesheet" href="estilos.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+
+    <nav>
+        <ul>
+            <div id="menu">
+
+                <li><a onclick="aparece1()" href="#acerca">Acerca de</a></li>
+                <li><a href="#servicios">Servicios</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </div>
+        </ul>
+    </nav>
+
+    <div class="content">
+
+        <section id="acerca">
+            <h2>Acerca de Nosotros</h2>
+            <article>
+                <h3>Entusiastas de la Grabacion</h3>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+                    <circle id="circle" cx="50" cy="50" r="50" fill="#FF5722"/>
+                    
+                    <rect id="rectangulo" class="rotacion" x="20" y="30" rx="10" ry="10" width="60" height="40" fill="blue" />
+                    <text class="rotacion" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" fill="#FFF" font-size="15">Record</text>
+                  </svg>
+                  
+                <p>Nos especializamos en capturar los momentos que importan. Con tecnología
+                    de vanguardia y un equipo de profesionales apasionados, ofrecemos servicios de grabación de alta
+                    calidad para todo tipo de eventos y proyectos. Nuestra misión es brindar recuerdos imborrables y
+                    contenido impactante que resuene con su audiencia. Permita que nuestra experiencia en la industria
+                    eleve su visión a nuevas alturas.</p>
+            </article>
+        </section>
+        <section id="servicios">
+            <h2>Servicios</h2>
+            <!-- Contenido de la sección de Servicios -->
+        </section>
+        <section id="contacto">
+            <h2>Contacto</h2>
+            <!-- Contenido de la sección de Contacto -->
+        </section>
+    </div>
+
+</body>
+
+</html>
