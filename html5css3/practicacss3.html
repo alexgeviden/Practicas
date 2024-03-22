@@ -16,8 +16,8 @@
             <div id="menu">
 
                 <li><a onclick="aparece1()" href="#acerca">Acerca de</a></li>
-                <li><a href="#servicios">Servicios</a></li>
-                <li><a href="#contacto">Contacto</a></li>
+                <li><a href="#trabajos" onclick="aparece2()">Trabajos</a></li>
+                <li><a href="#contacto" onclick="aparece3()">Contacto</a></li>
             </div>
         </ul>
     </nav>
@@ -28,24 +28,44 @@
             <h2>Acerca de Nosotros</h2>
             <article>
                 <h3>Entusiastas de la Grabacion</h3>
+                <div id="separador1"></div>
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
                     <circle id="circle" cx="50" cy="50" r="50" fill="#FF5722"/>
                     
                     <rect id="rectangulo" class="rotacion" x="20" y="30" rx="10" ry="10" width="60" height="40" fill="blue" />
                     <text class="rotacion" x="50%" y="50%" text-anchor="middle" alignment-baseline="middle" fill="#FFF" font-size="15">Record</text>
                   </svg>
-                  
-                <p>Nos especializamos en capturar los momentos que importan. Con tecnología
+                  <div id="separador1"></div>
+                <p id="texto1">Nos especializamos en capturar los momentos que importan. Con tecnología
                     de vanguardia y un equipo de profesionales apasionados, ofrecemos servicios de grabación de alta
                     calidad para todo tipo de eventos y proyectos. Nuestra misión es brindar recuerdos imborrables y
                     contenido impactante que resuene con su audiencia. Permita que nuestra experiencia en la industria
                     eleve su visión a nuevas alturas.</p>
             </article>
         </section>
-        <section id="servicios">
-            <h2>Servicios</h2>
-            <!-- Contenido de la sección de Servicios -->
+
+        <section id="trabajos">
+            <h2>Nuestros Trabajos</h2>
+            
+<div class="slider" id="slider">
+    <div class="slider-container" id="sliderContainer">
+      <div class="video" onmouseover="playVideo('VIDEO_ID_1')" onmouseout="pauseVideo('VIDEO_ID_1')">
+        <iframe id="VIDEO_ID_1" src="https://player.vimeo.com/video/852174630" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video" onmouseover="playVideo('VIDEO_ID_2')" onmouseout="pauseVideo('VIDEO_ID_2')">
+        <iframe id="VIDEO_ID_2" src="https://player.vimeo.com/video/852269198" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video" onmouseover="playVideo('VIDEO_ID_3')" onmouseout="pauseVideo('VIDEO_ID_3')">
+        <iframe id="VIDEO_ID_3" src="https://player.vimeo.com/video/848445562" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="video" onmouseover="playVideo('VIDEO_ID_4')" onmouseout="pauseVideo('VIDEO_ID_4')">
+        <iframe id="VIDEO_ID_4" src="https://player.vimeo.com/video/852176998" frameborder="0" allowfullscreen></iframe>
+      </div>
+    </div>
+  </div>
         </section>
+
+
         <section id="contacto">
             <h2>Contacto</h2>
             <!-- Contenido de la sección de Contacto -->
