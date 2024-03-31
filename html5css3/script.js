@@ -65,3 +65,4 @@ function aparece1() {
     var iframe = document.getElementById(videoId);
     iframe.contentWindow.postMessage('{"method":"pause"}', '*');
   }
+
