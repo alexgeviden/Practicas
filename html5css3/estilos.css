@@ -42,7 +42,7 @@ nav ul li a:hover {
 section {
     margin-bottom: 20px;
     
-    width: 100%; /* Added to limit the width of the section */
+    width: 100%; 
 }
 
 /* Seccion de acerca*/
@@ -50,10 +50,10 @@ section {
 #acerca {
     display: block;
     align-items: center;
-    justify-content: center; /* Added to center the content horizontally */
+    justify-content: center; 
     width: 600px;
     transition: 0.8s;
-    margin: 0 auto; /* Added to center the section horizontally */
+    margin: 0 auto; 
 }
 #acerca:hover{
     background-color: aliceblue;

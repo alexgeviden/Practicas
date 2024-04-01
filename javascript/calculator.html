@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calculadora</title>
+<style>
+    .calculator {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        width: 300px;
+        margin: auto;
+    }
+    button {
+        padding: 10px;
+        font-size: 18px;
+        background-color: #f0f0f0;
+        border: none;
+        cursor: pointer;
+    }
+    button:hover {
+        background-color: #e0e0e0;
+    }
+    #texto1 input{
+    margin: 0 auto;
+    width: fit-content;
+    display: block;
+    width: 300px;
+    height: 50px;
+    margin-top: 10px;
+}
+#texto1{
+    
+    background-color: rgb(17, 74, 124);
+    height: 250px;
+    width: 350px;
+    border-radius: 20px;
+    margin: auto;
+}
+#texto1 h3{
+    margin: 0 auto;
+    width: fit-content;
+    display: block;
+    margin-top: 30px;
+    
+    border-radius: 10px;
+    color: rgb(2, 255, 2);
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    
+}
+</style>
+</head>
+<body>
+
+<div class="calculator">
+    
+    <button onclick="mostrar('7')">7</button>
+    <button onclick="mostrar('8')">8</button>
+    <button onclick="mostrar('9')">9</button>
+    <button>÷</button>
+    <button onclick="mostrar('4')">4</button>
+    <button onclick="mostrar('5')">5</button>
+    <button onclick="mostrar('6')">6</button>
+    <button>*</button>
+    <button onclick="mostrar('1')">1</button>
+    <button onclick="mostrar('2')">2</button>
+    <button onclick="mostrar('3')">3</button>
+    <button>-</button>
+    <button onclick="mostrar('0')">0</button>
+    <button>.</button>
+    <button>=</button>
+    <button onclick="sumar()">+</button>
+    <button onclick="resetar()">Reset</button>
+</div>
+<div id="texto1">
+    <h3>Muestra</h3><br>
+    <input type="text" id="cajatexto">
+    <h3>Resultado</h3><br>
+    <input type="text" id="resultado">
+</div>
+<script>
+    const cajatexto = document.getElementById( "cajatexto");
+    const resultado = document.getElementById( "resultado");
+    var cifra = "";
+    var acumulado = "";
+    var sumado;
+    var restado;
+    var suma = false;
+    function resetar(){
+        cajatexto.value = "";
+        cifra = "";
+    }
+    function mostrar(num){
+            cajatexto.value = cifra + num;
+            cifra = cajatexto.value;
+    }
+    function sumar() {
+        
+        acumulado = cifra;
+        cifra = "";
+        suma = true;
+        alert("Se agrego a la pantalla: "+acumulado);
+}
+
+    function igual(){
+       
+    }
+</script>
+</body>
+</html>
