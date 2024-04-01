@@ -68,11 +68,11 @@
     <button onclick="mostrar('1')">1</button>
     <button onclick="mostrar('2')">2</button>
     <button onclick="mostrar('3')">3</button>
-    <button>-</button>
+    <button onclick="resta()">-</button>
     <button onclick="mostrar('0')">0</button>
     <button>.</button>
-    <button>=</button>
-    <button onclick="sumar()">+</button>
+    <button onclick="igual()">=</button>
+    <button onclick="suma()">+</button>
     <button onclick="resetar()">Reset</button>
 </div>
 <div id="texto1">
@@ -85,27 +85,78 @@
     const cajatexto = document.getElementById( "cajatexto");
     const resultado = document.getElementById( "resultado");
     var cifra = "";
-    var acumulado = "";
-    var sumado;
-    var restado;
-    var suma = false;
-    function resetar(){
+    var acumulado = 0;
+    var muestra=  [];
+    
+ var sumar = false;
+ var restar = false;
+    
+ function resetar(){
         cajatexto.value = "";
         cifra = "";
+        resultado.value= "";
+        acumulado = 0;
+        muestra = [];
     }
     function mostrar(num){
             cajatexto.value = cifra + num;
             cifra = cajatexto.value;
     }
-    function sumar() {
+    function display(){
+        var textomuestra = "";
+        for (let i = 0; i < muestra.length; i++) {
+            textomuestra +=  muestra[i] ;
+            
+        }
+        cajatexto.value = textomuestra;
+    }
+    function suma() {
         
-        acumulado = cifra;
-        cifra = "";
-        suma = true;
-        alert("Se agrego a la pantalla: "+acumulado);
+        muestra.push(cifra + " + ") ;
+        acumulado += parseInt(cifra);
+        resultado.value = acumulado;
+        cifra="";
+        display();
+        if (!sumar){sumar = true;}
+        
+        
+}
+function resta() {
+        muestra.push(cifra + " - ") ;
+       
+        if (sumar){
+            acumulado += parseInt(cifra);
+            resultado.value = acumulado;
+            display();
+        }
+       else {
+            
+        
+            acumulado -= parseInt(cifra);
+            resultado.value = acumulado;
+         
+       }
+        display();
+        cifra="";
+        if (sumar){sumar = false;}
+        if (!restar){restar = true;}
+        
+       
+        
 }
 
     function igual(){
+       
+       if (sumar){
+        resultado.value = acumulado + parseInt(cifra);
+        muestra.push(cifra);
+        display();
+       }
+       else if(restar){
+        resultado.value = (acumulado + parseInt(cifra)) * -1;
+        muestra.push(cifra);
+        display();
+       }
        
     }
 </script>
