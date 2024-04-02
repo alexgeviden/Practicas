@@ -4,161 +4,159 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculadora</title>
-<style>
-    .calculator {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 5px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        width: 300px;
-        margin: auto;
-    }
-    button {
-        padding: 10px;
-        font-size: 18px;
-        background-color: #f0f0f0;
-        border: none;
-        cursor: pointer;
-    }
-    button:hover {
-        background-color: #e0e0e0;
-    }
-    #texto1 input{
-    margin: 0 auto;
-    width: fit-content;
-    display: block;
-    width: 300px;
-    height: 50px;
-    margin-top: 10px;
-}
-#texto1{
-    
-    background-color: rgb(17, 74, 124);
-    height: 250px;
-    width: 350px;
-    border-radius: 20px;
-    margin: auto;
-}
-#texto1 h3{
-    margin: 0 auto;
-    width: fit-content;
-    display: block;
-    margin-top: 30px;
-    
-    border-radius: 10px;
-    color: rgb(2, 255, 2);
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    
-}
-</style>
+<link rel="stylesheet" href="estilo.css"/>
+
 </head>
 <body>
-
+    <div id="contenedor">
+    <div id="texto1">
+        <h3>Muestra</h3><br>
+        <input type="text" id="cajatexto" readonly>
+        <h3>Resultado</h3><br>
+        <input type="text" id="resultado" readonly>
+    </div>
 <div class="calculator">
     
     <button onclick="mostrar('7')">7</button>
     <button onclick="mostrar('8')">8</button>
     <button onclick="mostrar('9')">9</button>
-    <button>÷</button>
+    <button onclick="division()">÷</button>
     <button onclick="mostrar('4')">4</button>
     <button onclick="mostrar('5')">5</button>
     <button onclick="mostrar('6')">6</button>
-    <button>*</button>
+    <button onclick="multiplicacion()">*</button>
     <button onclick="mostrar('1')">1</button>
     <button onclick="mostrar('2')">2</button>
     <button onclick="mostrar('3')">3</button>
     <button onclick="resta()">-</button>
     <button onclick="mostrar('0')">0</button>
-    <button>.</button>
+    <button onclick="mostrar('.');">.</button>
     <button onclick="igual()">=</button>
     <button onclick="suma()">+</button>
     <button onclick="resetar()">Reset</button>
 </div>
-<div id="texto1">
-    <h3>Muestra</h3><br>
-    <input type="text" id="cajatexto">
-    <h3>Resultado</h3><br>
-    <input type="text" id="resultado">
 </div>
 <script>
-    const cajatexto = document.getElementById( "cajatexto");
-    const resultado = document.getElementById( "resultado");
-    var cifra = "";
-    var acumulado = 0;
-    var muestra=  [];
-    
- var sumar = false;
- var restar = false;
-    
- function resetar(){
-        cajatexto.value = "";
-        cifra = "";
-        resultado.value= "";
-        acumulado = 0;
-        muestra = [];
-    }
-    function mostrar(num){
-            cajatexto.value = cifra + num;
-            cifra = cajatexto.value;
-    }
-    function display(){
-        var textomuestra = "";
-        for (let i = 0; i < muestra.length; i++) {
-            textomuestra +=  muestra[i] ;
-            
-        }
-        cajatexto.value = textomuestra;
-    }
-    function suma() {
-        
-        muestra.push(cifra + " + ") ;
-        acumulado += parseInt(cifra);
-        resultado.value = acumulado;
-        cifra="";
-        display();
-        if (!sumar){sumar = true;}
-        
-        
-}
-function resta() {
-        muestra.push(cifra + " - ") ;
-       
-        if (sumar){
-            acumulado += parseInt(cifra);
-            resultado.value = acumulado;
-            display();
-        }
-       else {
-            
-        
-            acumulado -= parseInt(cifra);
-            resultado.value = acumulado;
-         
-       }
-        display();
-        cifra="";
-        if (sumar){sumar = false;}
-        if (!restar){restar = true;}
-        
-       
-        
+const cajatexto = document.getElementById("cajatexto");
+const resultado = document.getElementById("resultado");
+var cifra = "";
+var acumulado = 0;
+var sumar = true;
+var restar = false;
+var multi = false;
+var divi = false;
+function resetar() {
+    cajatexto.value = "";
+    cifra = "";
+    resultado.value = "";
+    acumulado = 0;
+    sumar = true; 
+    restar = false; 
+    multi =  false; 
+    divi  = false;  
 }
 
-    function igual(){
-       
-       if (sumar){
-        resultado.value = acumulado + parseInt(cifra);
-        muestra.push(cifra);
-        display();
-       }
-       else if(restar){
-        resultado.value = (acumulado + parseInt(cifra)) * -1;
-        muestra.push(cifra);
-        display();
-       }
-       
+function suma() {
+    if (restar) {
+        acumulado -= parseFloat(cifra);
+    } else if (multi) {
+        acumulado *= parseFloat(cifra);
+    } else if (divi) {
+        acumulado /= parseFloat(cifra);
+    } else {
+        acumulado += parseFloat(cifra);
     }
+    resultado.value = acumulado;
+    cifra = "";
+    sumar = true;
+    restar = false;
+    multi = false;
+    divi = false;
+}
+
+function resta() {
+    if (sumar) {
+        acumulado += parseFloat(cifra);
+    } 
+    else if (multi) {
+        acumulado *= parseFloat(cifra);
+    } else if (divi) {
+        acumulado /= parseFloat(cifra);
+    } 
+    else {
+        acumulado -= parseFloat(cifra);
+    }
+    resultado.value = acumulado;
+    cifra = "";
+    sumar = false;
+    restar = true;
+    multi = false;
+    divi = false;
+}
+
+function multiplicacion() {
+    if (sumar) {
+        acumulado += parseFloat(cifra);
+    } else if (restar) {
+        acumulado -= parseFloat(cifra);
+    } else if (divi) {
+        acumulado /= parseFloat(cifra);
+    } else {
+        acumulado = parseFloat(cifra);
+    }
+    resultado.value = acumulado;
+    cifra = "";
+    sumar = false;
+    restar = false;
+    multi = true;
+    divi = false;
+}
+
+
+
+function division() {
+    if (parseFloat(cifra) === 0) {
+        resultado.value = "Error: división por cero";
+    } else {
+        if (sumar) {
+            acumulado += parseFloat(cifra);
+        } else if (restar) {
+            acumulado -= parseFloat(cifra);
+        } else if (multi) {
+            acumulado *= parseFloat(cifra);
+        } else {
+            acumulado = parseFloat(cifra);
+        }
+        
+        resultado.value = acumulado;
+    }
+    
+    cifra = "";
+    sumar = false;
+    restar = false;
+    multi = false;
+    divi = true; 
+}
+
+
+
+function igual() {
+    var valorActual = parseFloat(cajatexto.value);
+    if (sumar) {
+        resultado.value = acumulado + valorActual;
+    } else if (restar) {
+        resultado.value = acumulado - valorActual;
+    } else if (multi) {
+        resultado.value = acumulado * valorActual;
+    } else if (divi) {
+        resultado.value = acumulado / valorActual;
+    }
+}
+
+function mostrar(num) {
+    cajatexto.value = cifra + num;
+    cifra = cajatexto.value;
+}
 </script>
 </body>
 </html>
