@@ -63,7 +63,7 @@ function multiplicacion() {
     } else if (divi) {
         acumulado /= parseFloat(cifra);
     } else {
-        acumulado = parseFloat(cifra);
+        acumulado *= parseFloat(cifra);
     }
     resultado.value = acumulado;
     cifra = "";
@@ -86,7 +86,7 @@ function division() {
         } else if (multi) {
             acumulado *= parseFloat(cifra);
         } else {
-            acumulado = parseFloat(cifra);
+            acumulado /= parseFloat(cifra);
         }
         
         resultado.value = acumulado;
