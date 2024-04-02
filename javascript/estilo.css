@@ -1,61 +1,62 @@
 .calculator {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr)); 
-    gap: 5px;
-    padding: 10px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 2px; 
+    padding: 5px; 
     margin: auto;
+    max-width: 300px; 
 }
 
 #contenedor {
     background-color: #606D78;
-    max-width: 40%;
+    max-width: 50%;
     margin: auto;
     border: 1px solid #ccc;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 10px; 
+    border-radius: 10px; 
     border-color: #4A87F7;
-    border-width: 10px;
+    border-width: 5px; 
 }
 
 button {
-    padding: 2em;
-    font-size: 1em;
-    background-color: #5DADE2; 
+    padding: 10px; 
+    font-size: 0.8em; 
+    background-color: #5DADE2;
     color: white;
     border: none;
     cursor: pointer;
-    border-radius: 5px;
-    width: 100%; 
-    text-align: center; 
+    border-radius: 3px; 
+    width: 100%;
+    text-align: center;
 }
 
 button:hover {
-    background-color: #3498DB; 
+    background-color: #3498DB;
 }
 
 #texto1 input {
     margin: 0 auto;
-    width: 70%;
+    width: 60%;
     display: block;
-    padding: 10px;
-    margin-top: 10px;
+    padding: 5px;
+    margin-top: 5px;
 }
 
 #texto1 {
-    padding: 10px;
-    width: 90%; 
-    border-radius: 20px;
+    padding: 5px; 
+    width: 80%;
+    border-radius: 10px;
     margin: auto;
-    margin-bottom: 20px;
+    margin-bottom: 10px; 
 }
 
 #texto1 h3 {
     margin: 0 auto;
     width: fit-content;
     display: block;
-    margin-top: 30px;
-    border-radius: 10px;
+    margin-top: 15px; 
+    border-radius: 5px; 
     color: #f8f8f8; 
     font-family: monospace;
-    font-size: 20px;
+    font-size: 16px; 
 }
