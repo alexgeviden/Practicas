@@ -1,15 +1,14 @@
 .calculator {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, minmax(0, 1fr)); /* Utiliza minmax para que los elementos se ajusten */
     gap: 5px;
     padding: 10px;
-    width: 400px;
     margin: auto;
 }
 
 #contenedor {
     background-color: #606D78;
-    max-width: 50%;
+    max-width: 40%;
     margin: auto;
     border: 1px solid #ccc;
     padding: 20px;
@@ -26,6 +25,7 @@ button {
     border: none;
     cursor: pointer;
     border-radius: 5px;
+    width: 90%; /* Ajusta el ancho de los botones al 100% */
 }
 
 button:hover {
@@ -34,7 +34,7 @@ button:hover {
 
 #texto1 input {
     margin: 0 auto;
-    width: 100%;
+    width: 70%;
     display: block;
     padding: 10px;
     margin-top: 10px;
@@ -42,7 +42,7 @@ button:hover {
 
 #texto1 {
     padding: 10px;
-    width: 200px;
+    width: 90%; /* Ajusta el ancho del contenedor de texto al 100% */
     border-radius: 20px;
     margin: auto;
     margin-bottom: 20px;
