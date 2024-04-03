@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilo.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+       
+       $(document).ready(function(){
+
+            $("#imagenes img").click(carro);
+       
+        });
+       
+        function carro(){
+
+            $(this).replaceWith("<div>Agregado al carrazo</div>");
+        }
+    </script>
+</head>
+<body>
+    <h1>Torres</h1>
+    <h4>Inquietud por las estructuras altas </h4>
+    <div id="imagenes">
+    <img id="imagen1" src="torre1.jpg"/>
+    <img id="imagen2" src="torre2.jpg"/>
+    <img id="imagen3" src="torre4.jpg"/>
+    <img id="imagen4" src="torre3.avif"/>
+</div>
+</body>
+</html>

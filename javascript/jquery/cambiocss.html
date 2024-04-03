@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cambiocss.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("#expand").click(expandir); // Asignar evento de clic al icono de expansión
+            $("#texto").hide(); // Ocultar el texto al cargar la página
+        });
+        
+        function expandir(event){
+            event.stopPropagation(); // Evitar que el clic se propague al enlace
+            var anchoActual = $("#enlace1").width();
+            if (anchoActual === 200) {
+                // Si el ancho actual es 200px, expandir el enlace
+                $("#enlace1").animate({ width: "300px", height: "200px" }, 500);
+                $("#texto").slideDown(4000);
+                $(".material-icons").animate({ rotate: "+0deg", left: "250px" }, "slow");
+            } else {
+                // Si el ancho actual es diferente de 200px, contraer el enlace
+                $("#texto").slideUp(500, function() {
+                    $("#enlace1").animate({ width: "200px", height: "20px" }, 500);
+                    $(".material-icons").animate({ rotate: "-90deg", left: "200px" }, 300);
+                });
+            }
+        }
+    </script>
+</head>
+<body>
+
+    <div id="enlaces">
+        <a id="enlace1" href="pruebasquery.html">Pruebas de html
+            <span id="texto">
+                <p>Sigue nuestras pruebas de contenido y disfruta de cosas nuevas cada dia</p>
+            </span>
+        </a>
+        <span id="expand" class="material-icons">expand_more</span><br>
+        <a id="importante" href="../calculator.html">Calculadora</a><br>
+        <a href="../pruebas.html">Pruebas de boton</a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+#imagenes{
+display: grid;
+grid-template-columns: repeat(2,7fr);
+gap: 10px;
+background-color: antiquewhite;
+height: 90%;
+}
+
+#imagenes img{
+    padding: 10px;
+    align-items: center;
+    width: 70%;
+    transition: 0.5s;
+    border-width: 10px;
+    background-color: aquamarine
+}
+#imagenes img:hover {
+    transform: scale(1.1);
+    background-color: rgb(49, 182, 135);
+    transform: translateY(-10px);
+    opacity:  .8;
+    
+}
+
