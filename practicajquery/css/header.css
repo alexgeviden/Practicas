@@ -1,0 +1,44 @@
+header nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+header nav li {
+    display: flex; /* Utilizar flexbox para alinear elementos */
+    align-items: center; /* Alinear verticalmente */
+    margin-bottom: 10px; /* Espaciado entre elementos de la lista */
+    transition: 0.5s;
+}
+header nav a {
+    text-decoration: none;
+    color: rgb(237, 237, 237);
+    padding: 8px;
+    display: inline-block; /* Hacer enlaces en línea */
+    vertical-align: middle; /* Alinear verticalmente con el icono */
+    transition: 0.5s;
+    width: 100%;
+}
+a:hover{
+    color: black;
+}
+.material-symbols-outlined{
+    transition: 1s;
+    color: aliceblue;
+}
+nav li:hover{
+    background-color: rgb(26, 226, 193);
+    
+}
+nav li:hover .material-symbols-outlined {
+    transform: translateX(4px);
+}
+nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 15%;
+    background-color: rgb(15, 15, 15);
+   
+    height: 100vh;
+    overflow-y: auto;
+}
