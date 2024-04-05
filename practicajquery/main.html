@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/estilomain.css">
+    <script src="jquery/jquery-3.7.1.js"></script>
+    <script src="jquery/scriptmain.js"></script>
+    <title>Document</title>
+    <script>
+$(document).ready(function() {
+    // Array de palabras a ser mostradas
+    var palabras = ["Lee", ", Aprende", ", Descarga" , ";)"];
+
+    // Seleccionar el div donde se mostrarán las palabras
+    var $textoTecleado = $('#texto-tecleado');
+
+    // Mostrar las palabras secuencialmente
+    function mostrarPalabrasSecuencialmente() {
+        // Limpiar el contenido del div antes de mostrar las palabras
+        $textoTecleado.empty();
+
+        // Mostrar cada palabra en un span
+        palabras.forEach(function(palabra, i) {
+            // Crear un span para cada palabra y agregarlo al div
+            var $span = $('<span>').text(palabra).hide(); // Ocultar el span inicialmente
+            $textoTecleado.append($span);
+
+            // Mostrar cada span con un pequeño retraso
+            $span.delay(1000 * i).fadeIn(500); // Espera de 2 segundos entre palabras
+        });
+    }
+
+    // Iniciar la animación al cargar la página
+    mostrarPalabrasSecuencialmente();
+});
+
+
+
+
+    </script>
+</head>
+<body>
+<section id="introduccion">
+    <div id="introcontainer">
+        <div id="texto-tecleado"></div>
+        <img src="img/logotransyellow.png" id="logointro">
+
+    </div>
+
+</section>
+<section id="categoriaseccion">
+    <div id="main-categorias-container">
+        <div class="categoria" style="background-color: #7E80A6;"><h3>CLÁSICOS</h3></div>
+        <div class="categoria" style="background-color: #7E80A6;"><h3>HISTÓRICOS</h3></div>
+        <div class="categoria" style="background-color: #7E80A6;"><h3>DRAMA</h3></div>
+        <div class="categoria" id="ultima-categoria" style="background-color: #7E80A6;"><h3>FANTASÍA</h3></div>
+    </div>
+    
+</section>
+</body>
+</html>
