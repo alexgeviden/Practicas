@@ -46,7 +46,7 @@ $(document).ready(function() {
     $(this).data("originalHeight", $(this).height());
     
     $(this).height(400);
-    
+   
     $(this).css("justify-content" ,  "flex-start")
     $(this).find("span").css("color" , "black");
     
@@ -62,7 +62,7 @@ $(this).find(".despliegelibro").fadeIn(600);
 
 $(".categoria").on("mouseleave", function(){
     // Revertir la altura a la original
-    $(this).height($(this).data("originalHeight"));
+    $(this).height(150);
     
     // Revertir el alineamiento del contenido y el color del texto
     $(this).css("justify-content", "center");
