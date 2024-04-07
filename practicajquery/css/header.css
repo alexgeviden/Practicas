@@ -3,10 +3,15 @@ body {
     margin: 0;
     padding: 0;
 }
-header{
-    width: 0%; /* Ancho del menú */
-    overflow: hidden; /* Para evitar que los elementos desborden */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    z-index: 9999; /* Asegura que el nav esté en la parte superior */
 }
+
 header nav ul {
     list-style-type: none;
     padding: 0;

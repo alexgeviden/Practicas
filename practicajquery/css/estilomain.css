@@ -52,13 +52,17 @@ html{
         margin-left: 15PX;
     }
 }
+
+/* ESTILO DE SECCION CATEGORIAS*/
+
 #main-categorias-container {
-    
-    height: 100vh;
-    display: grid; /* Establecer el contenedor como un grid */
-    grid-template-columns: 1fr; /* Una columna */
-    grid-template-rows: repeat(4, 1fr); /* Cuatro filas iguales */
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    position: relative;
 }
+
 .categoria {
     display: flex;
     align-items: center;
@@ -66,8 +70,82 @@ html{
     font-size: 24px;
     border-bottom: 4px solid;
     border-color: #37394F;
+    
     color: #FADD6B;
+    padding: 10px; /* Agregar un espacio alrededor de los elementos */
+    transition: 0.5s;
+    position: relative;
 }
+.categoria:hover{
+
+    background-color: #FADD6B !important;
+    color:  #37394F;
+}
+
+
+#iconsmain {
+    position: relative;
+    color: #FADD6B;
+    font-size: 40px;
+    transform: rotate(0deg);
+}
+
+.categoria h3{
+    width: 20%;
+    
+    
+
+}
+/* ESTILO PARA EL DESPLEGABLE DEL LIBRO ULTIMA PUBLICACION*/
+.despliegelibro {
+    
+    width: 50%;
+    height: 50vh;
+    position: absolute;
+    color: #37394F;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+.despliegelibro p{
+    font-size: 20px;
+}
+.izquierda {
+    flex: 1; /* Toma todo el espacio disponible */
+    width: 50%;
+    justify-content: center;
+    top: 50;
+    margin-left: 10px;
+}
+
+.derecha {
+    margin-left: 20px; /* Espacio entre los dos lados */
+    flex-shrink: 0; /* No se encogerá */
+    
+    width: 50%;
+}
+.imagen-portada{
+width: 50%;}
+
+.botones {
+        margin-top: 10px;
+    }
+
+    .botones button {
+        background-color: #37394F;
+        border: none;
+        color:#FADD6B;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 30px;
+    }
+
+    .botones button:hover {
+        background-color: #FADD6B;
+        color: #37394F;
+    }
 #ultima-categoria{
     border: none;
 }
