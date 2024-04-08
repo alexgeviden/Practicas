@@ -3,7 +3,6 @@ $(document).ready(function(){
     $(".leer").on("click", function() {
         // Guardar una referencia al elemento que activó el evento de clic
         var $this = $(this);
-        $this.prop('disabled', true);
     
         // Realizar la solicitud para verificar la sesión
         $.get("verificacion.php", function(data) {
@@ -17,9 +16,11 @@ $(document).ready(function(){
                 // Mostrar un mensaje de alerta si el usuario no ha iniciado sesión
                 alert("Tienes que iniciar sesión");
             }
-            $this.prop('disabled', false);
         });
     });
+    
+    
+    
     $(".descargar").on("click", function(event) {
         // Guardar una referencia al botón que activó el evento de clic
         var $this = $(this);
