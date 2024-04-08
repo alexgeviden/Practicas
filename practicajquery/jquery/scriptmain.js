@@ -1,4 +1,79 @@
 $(document).ready(function() {
+    // Scripts para el main 
+    $(".despliegelibro").hide();
+    // Array de palabras a ser mostradas
+    var palabras = ["Lee", ", Aprende", ", Descarga" , ";)"];
+
+    // Seleccionar el div donde se mostrarán las palabras
+    var $textoTecleado = $('#texto-tecleado');
+
+    // Mostrar las palabras secuencialmente
+    function mostrarPalabrasSecuencialmente() {
+        // Limpiar el contenido del div antes de mostrar las palabras
+        $textoTecleado.empty();
+
+        // Mostrar cada palabra en un span
+        palabras.forEach(function(palabra, i) {
+            // Crear un span para cada palabra y agregarlo al div
+            var $span = $('<span>').text(palabra).hide(); // Ocultar el span inicialmente
+            $textoTecleado.append($span);
+
+            // Mostrar cada span con un pequeño retraso
+            $span.delay(1000 * i).fadeIn(500); // Espera de 2 segundos entre palabras
+        });
+    }
+
+    // Iniciar la animación al cargar la página
+    mostrarPalabrasSecuencialmente();
+
+    //SECCION CATEGORIAS 
+    
+   const textoscat = $("·categoria h3");
+   const iconoscat = $("·categoria span");
+    //Abrir categoria
+    $(".categoria").on("mouseenter", function(){
+    
+    $(this).data("originalHeight", $(this).height());
+    
+    $(this).height(400);
+   
+    $(this).css("justify-content" ,  "flex-start")
+    $(this).find("span").css("color" , "black");
+    
+
+    // Animación y ocultar el elemento en pantallas pequeñas
+    if ($(window).width() <= 700) {
+        $(this).find("#iconsmain").animate({ left: 50 }, 400, function() {
+            // Desvanecer el elemento después de la animación
+            $(this).css("display", "none");
+        });
+    } else {
+        $(this).find("#iconsmain").animate({ left: 50 }, 400);
+    }
+
+$(this).find(".despliegelibro").fadeIn(600);
+    
+});
+
+$(".categoria").on("mouseleave", function(){
+    // Revertir la altura a la original
+    $(this).height(150);
+    
+    // Revertir el alineamiento del contenido y el color del texto
+    $(this).css("justify-content", "center");
+    $(this).find("span").css("color", "#FADD6B");
+
+    // Animar el icono hacia la derecha (posición original)
+    $(this).find("#iconsmain").animate({
+        left: 0
+    }, 400);
+    $(this).find("#iconsmain").show();
+    // Ocultar el div despliegelibro con fadeOut
+    $(this).find(".despliegelibro").hide();
+});;
+
+
+
     var crimenycastigo = {
         "Nombre": "Crimen y Castigo",
         "Autor": "Fiódor Dostoyevski",

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drama</title>
+    <link rel="stylesheet" href="/css/categorias.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <script src="jquery/scriptmain.js"></script>
+    <script src="jquery/jquery-3.7.1.js"></script>
+    <script src="jquery/categorias.js"></script>
+    <script>
+        
+        $(document).ready(function(){
+            $("#titulocat").hide().fadeIn(1500);
+            $(".leer").on("click", function() {
+        var pdfURL = $(this).closest(".libro").find("a").attr("href");
+        window.open(pdfURL, "_blank");
+    });
+            
+        });
+    </script>
+</head>
+<body>
+    <section id="introduccion">
+        <div id="introcontainer">
+            <div id="titulocat">
+                <h2>Drama</h2>
+            </div>
+            <img src="img/logotransyellow.png" id="logointro">
+    
+        </div>
+    
+    </section>
+    <section id="libros">
+        <div class="libroscontainer" id="libros-clasicos">
+            <div class="libro">
+                <div class="izquierda">
+                    
+                    <img src="./libros/drama/almas.jpg" alt="">
+                </div>
+                <div class="derecha">
+                    <div id="contenido-derecha">
+                        <div id="datos-drama1">
+                            
+                        </div>
+                        <div id="botones-cat">
+                            <button class="leer">Leer</button>
+                            <a href="/libros/drama/Almas en el paramo - Miguel de Leon.pdf" download><button class="descargar">Descargar</button></a>
+                        </div>
+                    </div>
+                </div>
+          
+            </div>
+            <div class="libro">
+                <div class="izquierda">
+                    
+                    <img src="./libros/drama/destrozos.jpg"  alt="">
+                </div>
+                <div class="derecha">
+                    <div id="contenido-derecha">
+                        <div id="datos-drama2">
+                            
+                        </div>
+                        <div id="botones-cat">
+                            <button class="leer">Leer</button>
+                            <a href="libros/drama/Los destrozos - Bret Easton Ellis.pdf" download><button class="descargar">Descargar</button></a>
+                        </div>
+                    </div>
+                </div>
+          
+            </div>
+            <div class="libro">
+                <div class="izquierda">
+                    
+                    <img src="./libros/drama/semilla.jpg" alt="">
+                </div>
+                <div class="derecha">
+                    <div id="contenido-derecha">
+                        <div id="datos-drama3">
+                            
+                        </div>
+                        <div id="botones-cat">
+                            <button class="leer">Leer</button>
+                            <a href="libros/drama/La mala semilla - William March.pdf" download><button class="descargar">Descargar</button></a>
+                        </div>
+                    </div>
+                </div>
+          
+            </div>
+            <div class="libro">
+                <div class="izquierda">
+                    
+                    <img src="libros/drama/timadores.jpg" alt="">
+                </div>
+                <div class="derecha">
+                    <div id="contenido-derecha">
+                        <div id="datos-drama4">
+                            
+                        </div>
+                        <div id="botones-cat">
+                            <button class="leer">Leer</button>
+                            <a href="libros/drama/Los timadores - Jim Thompson.pdf" download><button class="descargar">Descargar</button></a>
+                        </div>
+                    </div>
+                </div>
+          
+            </div>
+    </section>
+    
+</body>
+</html>
