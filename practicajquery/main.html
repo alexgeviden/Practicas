@@ -11,16 +11,20 @@
 <script>
     $(document).ready(function(){
 
-        // Realizar una solicitud AJAX al script PHP para verificar si el usuario ha iniciado sesión
-      
+        $.get("verificacion.php", function(data) {
+            // Si el servidor devuelve "true", significa que el usuario ha iniciado sesión
+            if (data === "true") {
+                // Mostrar el texto oculto
+                $(".descargar").show();
+               
+            } else{
+                
+                $(".descargar").hide();
+            }
+        });
 
        
-        $(".botones").on("click", ".leer", function(event) {
-        event.stopPropagation(); // Evitar que el clic se propague a los elementos superiores
-        var pdfURL = $(this).closest(".botones").find("a").attr("href");
-        window.open(pdfURL, "_blank");
-    });
-
+   
 
 
     $(".botones").on("click", ".descargar", function(event) {
@@ -42,8 +46,30 @@
     $("#botonfantasia").click(function() {
         $("#contenido").load("./fantasia.html");
     });
-    
+
+    $(".leer").on("click", function() {
+    // Guardar una referencia al elemento que activó el evento de clic
+    var $this = $(this);
+
+    // Realizar la solicitud para verificar la sesión
+    $.get("verificacion.php", function(data) {
+        // Si el servidor devuelve "true", significa que el usuario ha iniciado sesión
+        if (data === "true") {
+            // Obtener la URL del PDF
+            var pdfURL = $this.closest(".despliegelibro").find("a").attr("href");
+            // Abrir el PDF en una nueva pestaña
+            window.open(pdfURL, "_blank");
+        } else {
+            // Mostrar un mensaje de alerta si el usuario no ha iniciado sesión
+            alert("Tienes que iniciar sesión");
+        }
+    });
 });
+
+
+});
+
+
 </script>
 </head>
 <body>
@@ -111,7 +137,7 @@
                     </div>
                     <div class="botones">
                         <button class="leer">Leer</button>
-                            <a href="libros/drama/Almas en el paramo - Miguel de Leon.pdf" download><button class="descargar">Descargar</button></a>
+                            <a href="libros/drama/almas.pdf" download><button class="descargar">Descargar</button></a>
                         <button id="botondrama">Ver todos</button>
                     </div>
                 </div>

@@ -1,5 +1,6 @@
 $(document).ready(function(){
 
+   
     $(".leer").on("click", function() {
         // Guardar una referencia al elemento que activó el evento de clic
         var $this = $(this);
@@ -19,33 +20,22 @@ $(document).ready(function(){
         });
     });
     
-    
-    
-    $(".descargar").on("click", function(event) {
-        // Guardar una referencia al botón que activó el evento de clic
-        var $this = $(this);
-    
-        // Deshabilitar el botón para evitar clics repetidos
-        $this.prop('disabled', true);
-    
-        // Prevenir el comportamiento predeterminado del enlace
-        event.preventDefault();
-    
-        // Realizar la solicitud para verificar la sesión
-        $.get("verificacion.php", function(data) {
-            // Si el servidor devuelve "true", significa que el usuario ha iniciado sesión
-            if (data === "true") {
-                // Descargar el recurso asociado al botón
-                window.location.href = $this.closest(".libro").find("a").attr("href");
-            } else {
-                // Mostrar un mensaje de alerta si el usuario no ha iniciado sesión
-                alert("Tienes que iniciar sesión para descargar el libro.");
-            }
-    
-            // Habilitar nuevamente el botón después de completar la verificación
-            $this.prop('disabled', false);
-        });
+    $.get("verificacion.php", function(data) {
+        // Si el servidor devuelve "true", significa que el usuario ha iniciado sesión
+        if (data === "true") {
+            // Mostrar el texto oculto
+            $(".descargar").show();
+           
+        } else{
+            
+            $(".descargar").hide();
+            
+        }
     });
+    
+
+   
+    
     
 // LIBROS CLASICOS 
 
@@ -310,5 +300,5 @@ $(document).ready(function(){
     }
 });
     
-
+    
 
