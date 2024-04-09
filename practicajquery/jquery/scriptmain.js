@@ -1,7 +1,7 @@
 $(document).ready(function() {
     // Scripts para el main 
     $(".despliegelibro").hide();
-    // Array de palabras a ser mostradas
+    
     var palabras = ["Lee", ", Aprende", ", Descarga" , ";)"];
 
     // Seleccionar el div donde se mostrarán las palabras
@@ -14,23 +14,25 @@ $(document).ready(function() {
 
         // Mostrar cada palabra en un span
         palabras.forEach(function(palabra, i) {
-            // Crear un span para cada palabra y agregarlo al div
-            var $span = $('<span>').text(palabra).hide(); // Ocultar el span inicialmente
+           
+            var $span = $('<span>').text(palabra).hide(); 
             $textoTecleado.append($span);
 
             // Mostrar cada span con un pequeño retraso
-            $span.delay(1000 * i).fadeIn(500); // Espera de 2 segundos entre palabras
+            $span.delay(1000 * i).fadeIn(500); 
         });
     }
 
-    // Iniciar la animación al cargar la página
+  
     mostrarPalabrasSecuencialmente();
 
     //SECCION CATEGORIAS 
     
    const textoscat = $("·categoria h3");
    const iconoscat = $("·categoria span");
-    //Abrir categoria
+    
+   //Abrir categoria
+
     $(".categoria").on("mouseenter", function(){
     
     $(this).data("originalHeight", $(this).height());
@@ -44,7 +46,7 @@ $(document).ready(function() {
     // Animación y ocultar el elemento en pantallas pequeñas
     if ($(window).width() <= 700) {
         $(this).find("#iconsmain").animate({ left: 50 }, 400, function() {
-            // Desvanecer el elemento después de la animación
+           
             $(this).css("display", "none");
         });
     } else {
@@ -56,19 +58,19 @@ $(this).find(".despliegelibro").fadeIn(600);
 });
 
 $(".categoria").on("mouseleave", function(){
-    // Revertir la altura a la original
+  
     $(this).height(150);
     
-    // Revertir el alineamiento del contenido y el color del texto
+   
     $(this).css("justify-content", "center");
     $(this).find("span").css("color", "#FADD6B");
 
-    // Animar el icono hacia la derecha (posición original)
+   
     $(this).find("#iconsmain").animate({
         left: 0
     }, 400);
     $(this).find("#iconsmain").show();
-    // Ocultar el div despliegelibro con fadeOut
+   
     $(this).find(".despliegelibro").hide();
 });;
 
@@ -109,7 +111,7 @@ $(".categoria").on("mouseleave", function(){
 
     var datosclasico = $("#datos-libro-clasico");
 
-    // Iterar sobre el objeto crimenycastigo y agregar cada dato como un párrafo al div
+
     for (var propiedad in crimenycastigo) {
         if (crimenycastigo.hasOwnProperty(propiedad)) {
             var datoElemento = $("<p>").text(propiedad + ": " + crimenycastigo[propiedad]);
@@ -118,7 +120,7 @@ $(".categoria").on("mouseleave", function(){
     }
     var datosclasico = $("#datos-libro-historico");
 
-    // Iterar sobre el objeto crimenycastigo y agregar cada dato como un párrafo al div
+
     for (var propiedad in milenio) {
         if (milenio.hasOwnProperty(propiedad)) {
             var datoElemento = $("<p>").text(propiedad + ": " + milenio[propiedad]);
@@ -127,7 +129,7 @@ $(".categoria").on("mouseleave", function(){
     }
     var datosclasico = $("#datos-libro-drama");
 
-    // Iterar sobre el objeto crimenycastigo y agregar cada dato como un párrafo al div
+
     for (var propiedad in almasEnElParamo) {
         if (almasEnElParamo.hasOwnProperty(propiedad)) {
             var datoElemento = $("<p>").text(propiedad + ": " + almasEnElParamo[propiedad]);
@@ -136,7 +138,7 @@ $(".categoria").on("mouseleave", function(){
     }
     var datosclasico = $("#datos-libro-fantasia");
 
-    // Iterar sobre el objeto crimenycastigo y agregar cada dato como un párrafo al div
+
     for (var propiedad in laConfesora) {
         if (laConfesora.hasOwnProperty(propiedad)) {
             var datoElemento = $("<p>").text(propiedad + ": " + laConfesora[propiedad]);

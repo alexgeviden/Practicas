@@ -28,10 +28,9 @@
 
 
     $(".botones").on("click", ".descargar", function(event) {
-        event.stopPropagation(); // Evitar que el clic se propague a los elementos superiores
-        // Aquí maneja la acción de descarga según tu lógica
+        event.stopPropagation(); 
         var pdfURL = $(this).attr("href");
-        // Agrega tu lógica para la descarga directa aquí
+       
     });
 
     $("#botonclasico").click(function() {
@@ -48,14 +47,14 @@
     });
 
     $(".leer").on("click", function() {
-    // Guardar una referencia al elemento que activó el evento de clic
+   
     var $this = $(this);
 
     // Realizar la solicitud para verificar la sesión
     $.get("verificacion.php", function(data) {
-        // Si el servidor devuelve "true", significa que el usuario ha iniciado sesión
+       
         if (data === "true") {
-            // Obtener la URL del PDF
+           
             var pdfURL = $this.closest(".despliegelibro").find("a").attr("href");
             // Abrir el PDF en una nueva pestaña
             window.open(pdfURL, "_blank");

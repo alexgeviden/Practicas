@@ -18,7 +18,7 @@ $(document).ready(function(){
             $("#login-form").hide();
             setTimeout(function() {
                 // Redireccionar a otra página
-                window.location.href = "index.html"; // Reemplaza "pagina_requerida.php" con la URL de la página a la que deseas redirigir al usuario
+                window.location.href = "index.html"; 
             }, 2000);
         } else {
             // Mostrar un mensaje de error si el inicio de sesión no fue exitoso

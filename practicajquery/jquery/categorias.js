@@ -7,9 +7,9 @@ $(document).ready(function(){
     
         // Realizar la solicitud para verificar la sesión
         $.get("verificacion.php", function(data) {
-            // Si el servidor devuelve "true", significa que el usuario ha iniciado sesión
+            
             if (data === "true") {
-                // Obtener la URL del PDF
+             
                 var pdfURL = $this.closest(".libro").find("a").attr("href");
                 // Abrir el PDF en una nueva pestaña
                 window.open(pdfURL, "_blank");
@@ -21,9 +21,9 @@ $(document).ready(function(){
     });
     
     $.get("verificacion.php", function(data) {
-        // Si el servidor devuelve "true", significa que el usuario ha iniciado sesión
+        
         if (data === "true") {
-            // Mostrar el texto oculto
+           
             $(".descargar").show();
            
         } else{

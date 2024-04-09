@@ -21,7 +21,7 @@ html {
 }
 
 #logointro {
-    width: 19%; /* Ajustar el tamaño de acuerdo a su contenedor */
+    width: 19%; 
    
     transition: 0.5s;
 }
@@ -35,13 +35,13 @@ html {
     color: #FADD6B;
     font-weight: 400;
     padding: 10px;
-    margin: 0; /* Eliminar cualquier margen existente */
+    margin: 0; 
     transition: 0.5s;
 }
 
 
 @media screen and (max-width: 1300px) {
-    /* Aquí puedes definir estilos CSS específicos para pantallas con un ancho máximo de 768px */
+  
     #introduccion h2 {
         font-size: 30px;
         color: #FADD6B;
@@ -55,7 +55,7 @@ html {
 }
 
 @media screen and (max-width: 700px) {
-    /* Aquí puedes definir estilos CSS específicos para pantallas con un ancho máximo de 768px */
+
     #introduccion h2 {
         font-size: 30px;
         color: #FADD6B;
@@ -76,14 +76,14 @@ html {
 .libroscontainer {
     display: grid;
     grid-template-columns: repeat(2, 1fr); /* Dos columnas de igual ancho */
-     /* Espacio entre los libros */
+ 
      width: 100%;
      height: auto;
      background-color: #7A776A;
 }
 
 .libro {
-    border: 1px solid #030303; /* Borde para resaltar cada libro */
+    border: 1px solid #030303; 
     padding: 20px;
     transition: 0.5s;
 }
@@ -106,8 +106,7 @@ background-color: #9b9786;
 }
 
 .libro {
-    border: 1px solid#FADD6B; /* Borde para resaltar cada libro */
-    display: grid;
+    border: 1px solid#FADD6B; 
     height: 50vh;
     grid-template-columns: 30% auto; /* La primera columna ocupa el 20% del ancho y la segunda ocupa el resto */
     position: relative;
@@ -115,7 +114,7 @@ background-color: #9b9786;
 
 .izquierda {
   margin-right: 10px;
-    width: 100%; /* Establecer el ancho al 100% para que se extienda por todo el contenedor de libro */
+    width: 100%; 
     margin-top: 40px;
     
 }

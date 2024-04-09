@@ -40,16 +40,16 @@
             $("#menuentero").hide();
             $("#linemenu").hide();
 
-            // Muestra el menu completo
+           
             $("#plusicon").on("click", function () {
                 var windowWidth = $(window).width();
                 var newWidth;
 
                 if (windowWidth < 768) { // Móvil
                     newWidth = "30%";
-                } else if (windowWidth >= 768 && windowWidth < 1024) { // Tablet
+                } else if (windowWidth >= 768 && windowWidth < 1024) { 
                     newWidth = "20%";
-                } else if (windowWidth >= 1024 && windowWidth < 2000) { // Tablet
+                } else if (windowWidth >= 1024 && windowWidth < 2000) { 
                     newWidth = "10%";
                 } else { // Notebook o pantalla más grande
                     newWidth = "10%";
@@ -76,7 +76,7 @@
 
                 if (windowWidth < 768) { // Móvil
                     newWidth = "5%";
-                } else if (windowWidth >= 768 && windowWidth < 1024) { // Tablet
+                } else if (windowWidth >= 768 && windowWidth < 1024) { 
                     newWidth = "5%";
                 } else { // Notebook o pantalla más grande
                     newWidth = "5%";
@@ -95,13 +95,13 @@
             // Mostrar el submenú cuando se pasa el ratón sobre el elemento principal
             $("#desplegar").on("mouseover", function () {
 
-                $("#submenu1").stop().slideDown(700); // Animación de deslizamiento hacia abajo
+                $("#submenu1").stop().slideDown(700); 
                 $("#flecha").animate({ rotate: "+90deg", }, 100);
                 $("#flecha").css("color", "black");
 
             }).on("mouseout", function () {
 
-                $("#submenu1").stop().slideUp(900); // Animación de deslizamiento hacia arriba
+                $("#submenu1").stop().slideUp(900); 
                 $("#flecha").animate({ rotate: "+0deg", }, 100);
                 $("#flecha").css("color", "white");
 
