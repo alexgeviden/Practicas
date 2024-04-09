@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mostrar Datos XML en HTML</title>
+</head>
+<style>
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+}
+
+#datos {
+  list-style: none;
+  padding: 0;
+}
+
+#datos li {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+  transition: all 0.3s ease;
+}
+
+#datos li h2 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#datos li p {
+  color: #666;
+}
+
+
+</style>
+<body>
+  <h1>Datos de Personas</h1>
+  <ul id="datos"></ul>
+
+  <script>
+    // Función para cargar y mostrar datos XML
+    function mostrarDatosXML(xml) {
+      var xmlDoc = xml.responseXML;
+      var personas = xmlDoc.getElementsByTagName("persona");
+
+      var datosList = document.getElementById("datos");
+
+      for (var i = 0; i < personas.length; i++) {
+        var nombre = personas[i].getElementsByTagName("nombre")[0].childNodes[0].nodeValue;
+        var edad = personas[i].getElementsByTagName("edad")[0].childNodes[0].nodeValue;
+
+        var listItem = document.createElement("li");
+        listItem.textContent = "Nombre: " + nombre + ", Edad: " + edad;
+        datosList.appendChild(listItem);
+      }
+    }
+
+    // Cargar el archivo XML
+    var xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function() {
+      if (this.readyState == 4 && this.status == 200) {
+        mostrarDatosXML(this);
+      }
+    };
+
+    xhttp.open("GET", "datos.xml", true);
+    xhttp.send();
+  </script>
+</body>
+</html>
