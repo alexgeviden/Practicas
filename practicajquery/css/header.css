@@ -1,3 +1,17 @@
+body {
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    z-index: 9999; /* Asegura que el nav esté en la parte superior */
+}
+
 header nav ul {
     list-style-type: none;
     padding: 0;
@@ -18,6 +32,9 @@ header nav a {
     transition: 0.5s;
     width: 100%;
 }
+#desplegar:hover #submenu1 {
+    display: block;
+}
 a:hover{
     color: black;
 }
@@ -26,19 +43,53 @@ a:hover{
     color: aliceblue;
 }
 nav li:hover{
-    background-color: rgb(26, 226, 193);
+    background-color: #FADD6B;
     
 }
-nav li:hover .material-symbols-outlined {
-    transform: translateX(4px);
+#contenido {
+    
+    height: 100vh;
+    box-sizing: border-box;
+    flex: 1;
 }
+
 nav{
     position: fixed;
+    display: flex;
+    flex-direction: column;
     top: 0;
     left: 0;
-    width: 15%;
-    background-color: rgb(15, 15, 15);
-   
+    width: 5%;
+    background-color: #393f4a00;
+    transition: 0.6s;
     height: 100vh;
     overflow-y: auto;
+   
+}
+#menubajo {
+    position: fixed;
+    margin-bottom: 10px;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+}
+
+#plusicon{
+    fill: #FADD6B;
+    transition: 0.5s;
+    width: 100%;
+}
+#plusicon:hover{
+    transform: rotate(180deg);
+
+}
+#linemenu{
+    fill: #FADD6B;
+    transition: 0.5s;
+   
+}
+#linemenu:hover{
+    transform: rotate(180deg);
+
 }

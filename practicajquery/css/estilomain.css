@@ -1,0 +1,177 @@
+html{
+    font-family: "Noto Sans", sans-serif;
+}
+#introcontainer {
+    display: flex;
+    justify-content: space-between; /* Alinear horizontalmente con espacio entre los elementos */
+    align-items: center; /* Alinear verticalmente en el centro */
+    height: 40vh;
+    background-color: #37394F;
+    padding: 0 20px; /* Añadir relleno a los lados */
+}
+
+#logointro {
+    width: 20%;
+    transition: 0.5s;
+
+}
+#logointro:hover{
+    transform: scale(1.1);
+}
+
+#introduccion span {
+    font-size: 70px;
+    color: #FADD6B;
+    font-weight: 400;
+    text-align: center;
+    padding: 10px;
+    margin-left: 15PX;
+    transition: 0.5s;
+    
+}
+
+@media screen and (max-width: 1300px) {
+    /* Aquí puedes definir estilos CSS específicos para pantallas con un ancho máximo de 768px */
+    #introduccion span {
+        font-size: 30px;
+        color: #FADD6B;
+        font-weight: 400;
+        text-align: center;
+        padding: 10px;
+        margin-left: 15PX;
+    }
+    #iconsmain{
+        margin-left: 40px;
+    }
+
+}
+@media screen and (max-width: 700px) {
+    /* Aquí puedes definir estilos CSS específicos para pantallas con un ancho máximo de 768px */
+    #introduccion span {
+        font-size: 10px;
+        color: #FADD6B;
+        font-weight: 400;
+        text-align: left;
+        
+        
+    }
+    .categoria {
+        justify-content: flex-start  !important;
+    }
+    .categoria h3{
+        font-size: 20px;
+    }
+    #iconsmain{
+        margin-left: 80px;
+    }
+    
+    .izquierdamain img {
+        float: right;
+        margin-left: 600px;
+        width: 80%;
+        font-size: 20px;
+    }
+   
+    .datos-libro , .botones {
+    display: none;
+    }
+   
+}
+
+/* ESTILO DE SECCION CATEGORIAS*/
+
+#main-categorias-container {
+    height: 60vh;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4, 1fr);
+    position: relative;
+}
+
+.categoria {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-bottom: 4px solid;
+    border-color: #37394F;
+    
+    color: #FADD6B;
+    padding: 10px; /* Agregar un espacio alrededor de los elementos */
+    transition: 0.5s;
+    position: relative;
+}
+.categoria:hover{
+
+    background-color: #FADD6B !important;
+    color:  #37394F;
+}
+
+
+#iconsmain {
+    position: relative;
+    color: #FADD6B;
+    font-size: 40px;
+    transform: rotate(0deg);
+}
+
+.categoria h3{
+    width: 20%;
+    
+    
+
+}
+/* ESTILO PARA EL DESPLEGABLE DEL LIBRO ULTIMA PUBLICACION*/
+.despliegelibro {
+    
+    width: 50%;
+    height: 50vh;
+    position: absolute;
+    color: #37394F;
+    right: 0;
+    display: flex;
+    align-items: center;
+}
+.despliegelibro p{
+    font-size: 15px;
+}
+.izquierdamain {
+    flex: 1; /* Toma todo el espacio disponible */
+    width: 40%;
+    justify-content: center;
+    top: 50;
+    margin-left: 10px;
+}
+
+.derechamain {
+    margin-left: 20px; /* Espacio entre los dos lados */
+    flex-shrink: 0; /* No se encogerá */
+    
+    width: 50%;
+}
+.imagen-portada{
+width: 60%;}
+
+.botones {
+        margin-top: 10px;
+    }
+
+    .botones button {
+        background-color: #37394F;
+        border: none;
+        color:#FADD6B;
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.3s, color 0.3s;
+        border-radius: 30px;
+    }
+
+    .botones button:hover {
+        background-color: #FADD6B;
+        color: #37394F;
+    }
+#ultima-categoria{
+    border: none;
+}
+

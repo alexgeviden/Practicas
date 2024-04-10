@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inicio de Sesión</title>
+    <script src="jquery/jquery-3.7.1.js"></script>
+    <script src="jquery/loggin.js"></script>
+    <link rel="stylesheet" href="./css/loggin.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap">
+<script>
+    
+</script>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form action="logg.php" method="post" id="login-form">
+            <div class="form-group">
+                <label for="username">Nombre de Usuario:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Contraseña:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button id="botonloggin" type="submit">Iniciar Sesión</button><br>
+        </form>
+       
+            <a href="javascript:history.back()"><button class="regreso" id="botonloggin">Volver Atras</button></a>
+        <div id="acceso">
+            
+        </div>
+        <p>Usuario : Manolo</p>
+        <p>Contraseña : 1234</p>
+    </div>
+    
+  
+
+</body>
+</html>

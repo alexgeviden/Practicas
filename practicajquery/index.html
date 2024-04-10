@@ -1,60 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MainPage</title>
+    <title>Housebooks</title>
     <script src="jquery/jquery-3.7.1.js"></script>
     <link rel="stylesheet" href="css/estilomain.css">
-    <link rel="stylesheet" href="css/header.css"/> 
+    <link rel="stylesheet" href="css/header.css" />
+    <link rel="stylesheet" href="css/categorias.css" />
+    <link rel="stylesheet" href="css/loggin.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
     <script src="jquery/scriptmain.js"></script>
+    <script src="jquery/categorias.js"></script>
+    <script src="jquery/loggin.js"></script>
+<style>
+    #botones-cat button{
+        margin-top: 5px !important;
+        width: 80% !important;
+    }
+  
+</style>
     <script>
-       $(document).ready(function(){
 
-// Ocultar el submenú por defecto
-$("#submenu1").hide();
+        $(document).ready(function () {
+            $("#contenido").load("./main.html")
+            
+            // Ocultar el submenú por defecto
+            $("#submenu1").hide();
+            $("#menuentero").hide();
+            $("#linemenu").hide();
 
-// Mostrar el submenú cuando se pasa el ratón sobre el elemento principal
-$("#desplegar").on("mouseover", function() {
-$("#submenu1").stop().slideDown(700); // Animación de deslizamiento hacia abajo
-$(".material-symbols-outlined").animate({ rotate: "+90deg",  }, 100);
-}).on("mouseout", function() {
-$("#submenu1").stop().slideUp(900); // Animación de deslizamiento hacia arriba
-$(".material-symbols-outlined").animate({ rotate: "+0deg", }, 100);
-});
+           
+            $("#plusicon").on("click", function () {
+                var windowWidth = $(window).width();
+                var newWidth;
+
+                if (windowWidth < 768) { // Móvil
+                    newWidth = "30%";
+                } else if (windowWidth >= 768 && windowWidth < 1024) { 
+                    newWidth = "20%";
+                } else if (windowWidth >= 1024 && windowWidth < 2000) { 
+                    newWidth = "10%";
+                } else { // Notebook o pantalla más grande
+                    newWidth = "10%";
+                }
+
+                $("nav").animate({
+                    width: newWidth,
+                }, 'slow', function () {
 
 
+                    $(this).css("background-color", "#37394F");
+                });
 
-});
+                $("#plusicon").hide();
+                $("#linemenu").show();
+                $("#menuentero").fadeIn(3000).delay().show();
+
+            });
+
+
+            $("#linemenu").on("click", function () {
+                var windowWidth = $(window).width();
+                var newWidth;
+
+                if (windowWidth < 768) { // Móvil
+                    newWidth = "5%";
+                } else if (windowWidth >= 768 && windowWidth < 1024) { 
+                    newWidth = "5%";
+                } else { // Notebook o pantalla más grande
+                    newWidth = "5%";
+                }
+
+                $("nav").animate({ width: newWidth }, 'slow', function () {
+                    $('#menuentero').fadeOut();
+                    $(this).css("background-color", "#393f4a00");
+                });
+
+                $("#plusicon").show();
+                $("#linemenu").hide();
+            });
+
+
+            // Mostrar el submenú cuando se pasa el ratón sobre el elemento principal
+            $("#desplegar").on("mouseover", function () {
+
+                $("#submenu1").stop().slideDown(700); 
+                $("#flecha").animate({ rotate: "+90deg", }, 100);
+                $("#flecha").css("color", "black");
+
+            }).on("mouseout", function () {
+
+                $("#submenu1").stop().slideUp(900); 
+                $("#flecha").animate({ rotate: "+0deg", }, 100);
+                $("#flecha").css("color", "white");
+
+            });
+
+            var navWidth = $("nav").width(); // Obtener el ancho del nav
+
+            $("#enlaceclasicos").on( "click", function() {
+                event.preventDefault();
+                $("#contenido").load("./clasicos.html")
+            });
+            $("#enlacefantasia").on( "click", function() {
+                event.preventDefault();
+                $("#contenido").load("./fantasia.html")
+            });
+            $("#enlacedrama").on( "click", function() {
+                event.preventDefault();
+                $("#contenido").load("./drama.html")
+            });
+            $("#enlacehistoricos").on( "click", function() {
+                event.preventDefault();
+                $("#contenido").load("./historicos.html")
+            });
+            $("#enlaceinicio").on( "click", function() {
+                event.preventDefault();
+                $("#contenido").load("./main.html")
+            });
+            $("#enlaceunete").on( "click", function() {
+                event.preventDefault();
+                $("#contenido").load("./unete.html")
+            });
+           
+            $.get("verificacion.php", function(data) {
+            // Si el servidor devuelve "true", significa que el usuario ha iniciado sesión
+            if (data === "true") {
+                // Mostrar el texto oculto
+                $("#enlaceloggin").hide();
+               
+            } else{
+                
+                $("#registro").hide();
+            }
+        });
+        
+        });
+
     </script>
 </head>
+
 <body>
     <header>
         <nav>
-            <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Acerca de</a></li>
-                <div id="desplegar">
-                <li id="servicios">
-                    <a href="#">Servicios</a>
-                    <span class="material-symbols-outlined">chevron_right</span>
+            <span id="plusmenu">
+                <svg id="plusicon" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 -960 960 960" width="50&">
+                    <path d="M440-440H200v-80h240v-240h80v240h240v80H520v240h-80v-240Z" />
+                </svg>
+                <svg id="linemenu" xmlns="http://www.w3.org/2000/svg" height="100" viewBox="0 -960 960 960" width="50%">
+                    <path d="M200-440v-80h560v80H200Z" />
+                </svg>
+            </span>
+            <div id="menuentero">
+                <ul id="menualto">
+                    <li><a id="enlaceinicio" href="#">Inicio</a></li>
+
+                    <div id="desplegar">
+                        <li id="categorias">
+                            <a href="#">Categorias</a>
+                            <span class="material-symbols-outlined" id="flecha">add</span>
+
+
+                        </li>
+                        <span id="submenu1">
+
+                            <li><a id="enlaceclasicos" href="#">Clásicos</a></li>
+                            <li><a id="enlacefantasia" href="#">Fantasía</a></li>
+                            <li><a id="enlacedrama" href="#">Drama</a></li>
+                            <li><a id="enlacehistoricos" href="#">Históricos</a></li>
+
+                        </span>
+                    </div>
                     
-                     
-                </li>
-                <span id="submenu1">
-                            
-                    <li><a href="#">Subcategoría 1</a></li>
-                    <li><a href="#">Subcategoría 2</a></li>
-                    <li><a href="#">Subcategoría 3</a></li>
-                    <li><a href="#">Subcategoría 4</a></li>
-            
-                </span>
+
+                </ul>
+                <ul id="menubajo">
+                    <li><a id="enlaceloggin" href="./loggin.html">Iniciar Sesión</a></li>
+                    <li><a id="registro" href="logout.php">Cerrar sesión</a></li>
+                </ul>
             </div>
-                <li><a href="#">Contacto</a></li>
-            </ul>
         </nav>
     </header>
+    <div id="contenido">
+
+    </div>
 </body>
+
 </html>
